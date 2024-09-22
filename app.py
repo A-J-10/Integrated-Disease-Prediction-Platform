@@ -14,7 +14,7 @@ working_dir = os.path.dirname(os.path.abspath(__file__))
 
 # loading the saved models
 
-diabetes_model = pickle.load(open(f'{working_dir}/Models/diabetes_model.sav', 'rb'))
+diabetes_model = pickle.load(open(f'{working_dir}/Models/diab_model.sav', 'rb'))
 
 heart_disease_model = pickle.load(open(f'{working_dir}/Models/heart_disease_model.sav', 'rb'))
 
@@ -42,28 +42,28 @@ if selected == 'Diabetes Prediction':
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        Pregnancies = st.text_input('Number of Pregnancies')
+        Pregnancies = st.text_input('Gender')
 
     with col2:
-        Glucose = st.text_input('Glucose Level')
+        Glucose = st.text_input('Age')
 
     with col3:
-        BloodPressure = st.text_input('Blood Pressure value')
+        BloodPressure = st.text_input('Hypertension')
 
     with col1:
-        SkinThickness = st.text_input('Skin Thickness value')
+        SkinThickness = st.text_input('Heart disease')
 
     with col2:
-        Insulin = st.text_input('Insulin Level')
+        Insulin = st.text_input('smoking history')
 
     with col3:
         BMI = st.text_input('BMI value')
 
     with col1:
-        DiabetesPedigreeFunction = st.text_input('Diabetes Pedigree Function value')
+        DiabetesPedigreeFunction = st.text_input('HbA1c level')
 
     with col2:
-        Age = st.text_input('Age of the Person')
+        Age = st.text_input('Blood Glucose level')
 
 
     # code for Prediction
@@ -73,8 +73,8 @@ if selected == 'Diabetes Prediction':
 
     if st.button('Diabetes Test Result'):
 
-        user_input = [Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin,
-                      BMI, DiabetesPedigreeFunction, Age]
+        user_input = ['gender', 'age', 'hypertension', 'heart_disease', 'smoking_history',
+       'bmi', 'HbA1c_level', 'blood_glucose_level']
 
         user_input = [float(x) for x in user_input]
 
