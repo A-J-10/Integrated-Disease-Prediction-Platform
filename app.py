@@ -17,7 +17,6 @@ st.set_page_config(
 # ─── 2) Custom CSS ─────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-  .stApp { background-color: #F5F5F5; }
   .sidebar .sidebar-content { background-color: #FFFFFF; }
   [data-testid="metric-container"] {
     border: 1px solid #E0E0E0;
